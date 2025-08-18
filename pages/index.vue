@@ -3,6 +3,7 @@ import { ref } from 'vue';
 
 import type { Apartment } from '~/src/interfaces/Apartment';
 import ApartmentRow from "~/src/components/ApartmentRow.vue";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 const apartments = ref<Apartment[]>([
   {
@@ -53,11 +54,29 @@ const apartments = ref<Apartment[]>([
     <h2 class="apartments-page__title">Квартиры</h2>
     <ul class="apartments-list" v-if="apartments.length">
       <li class="apartments-list__header">
-        <div class="apartments-list__text">Планировка</div>
-        <div class="apartments-list__text">Квартира</div>
-        <div class="apartments-list__text">S, м²</div>
-        <div class="apartments-list__text">Этаж</div>
-        <div class="apartments-list__text">Цена, ₽</div>
+        <div class="apartments-list__text apartments-list-column">Планировка</div>
+        <div class="apartments-list__text apartments-list-column">Квартира</div>
+        <div class="apartments-list-column">
+          <span class="apartments-list__text">S, м²</span>
+          <div class="apartments-list-column__filter filter">
+            <font-awesome-icon icon="chevron-up" class="filter__control filter__control--up" />
+            <font-awesome-icon icon="chevron-down" class="filter__control filter__control--down" />
+          </div>
+        </div>
+        <div class="apartments-list-column">
+          <span class="apartments-list__text">Этаж</span>
+          <div class="apartments-list-column__filter filter">
+            <font-awesome-icon icon="chevron-up" class="filter__control filter__control--up" />
+            <font-awesome-icon icon="chevron-down" class="filter__control filter__control--down" />
+          </div>
+        </div>
+        <div class="apartments-list-column">
+          <span class="apartments-list__text">Цена, ₽</span>
+          <div class="apartments-list-column__filter filter">
+            <font-awesome-icon icon="chevron-up" class="filter__control filter__control--up" />
+            <font-awesome-icon icon="chevron-down" class="filter__control filter__control--down" />
+          </div>
+        </div>
       </li>
       <apartment-row
         v-for="apartment in apartments"
@@ -110,6 +129,33 @@ const apartments = ref<Apartment[]>([
 
     &__apartment {
       padding: 16px 0 24px 0;
+    }
+
+    &-column {
+      display: flex;
+
+      &__filter {
+        display: flex;
+        flex-direction: column;
+        margin-left: 6px;
+
+        .filter__control {
+          position: relative;
+
+          font-size: 10px;
+          opacity: .5;
+          color: $dark;
+          cursor: pointer;
+
+          &--down {
+            top: -2px;
+          }
+
+          &--up {
+            top: 2px;
+          }
+        }
+      }
     }
   }
 

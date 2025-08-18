@@ -12,4 +12,7 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/fonts.scss', '~/assets/default.scss'],
+  plugins: [
+    '~/src/plugins/fontawesome.ts'
+  ],
 })
