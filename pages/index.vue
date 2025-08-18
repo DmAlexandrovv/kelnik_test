@@ -1,52 +1,34 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 import type { Apartment } from '~/src/interfaces/Apartment';
-import ApartmentRow from "~/src/components/ApartmentRow.vue";
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import ApartmentRow from '~/src/components/ApartmentRow.vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-const apartments = ref<Apartment[]>([
-  {
-    id: '11',
-    name: '3-х комнатная квартира',
-    area: 54.5,
-    floor: 1,
-    cost: 6545000,
-    maxFloor: 17,
-  },
-  {
-    id: '22',
-    name: '3-х комнатная квартира',
-    area: 54,
-    floor: 1,
-    cost: 6545000,
-    maxFloor: 17,
-  },
-  {
-    id: '33',
-    name: '3-х комнатная квартира',
-    area: 54,
-    floor: 1,
-    cost: 6545000,
-    maxFloor: 17,
-  },
-  {
-    id: '44',
-    name: '3-х комнатная квартира',
-    area: 54.5,
-    floor: 1,
-    cost: 6545000,
-    maxFloor: 17,
-  },
-  {
-    id: '55',
-    name: '3-х комнатная квартира',
-    area: 54,
-    floor: 1,
-    cost: 6545000,
-    maxFloor: 17,
-  }
-]);
+const LOAD_STEP = 20;
+
+const apartments = ref<Apartment[]>([]);
+const offset = ref<number>(LOAD_STEP);
+const totalCount = ref<number>(0);
+
+onMounted(async () => {
+  const data = await fetch(`http://localhost:3001/apartments?_page=1&_per_page=${offset.value}`)
+    .then(res => res.json());
+
+  apartments.value = data.data;
+  totalCount.value = data.items;
+});
+
+const canFetchMore = computed(() => apartments.value.length < totalCount.value);
+
+const loadMore = async () => {
+  offset.value = offset.value + LOAD_STEP;
+
+  const { data } = await fetch(`http://localhost:3001/apartments?_page=${Math.floor(offset.value / LOAD_STEP)}&_per_page=${LOAD_STEP}`)
+    .then(res => res.json());
+
+  apartments.value = [...apartments.value, ...data];
+}
 </script>
 
 <template>
@@ -86,7 +68,13 @@ const apartments = ref<Apartment[]>([
       >
       </apartment-row>
     </ul>
-    <button class="apartments-page__load-more-btn">Загрузить еще</button>
+    <button
+      v-if="canFetchMore"
+      class="apartments-page__load-more-btn"
+      @click="loadMore"
+    >
+      Загрузить еще
+    </button>
   </div>
 </template>
 
