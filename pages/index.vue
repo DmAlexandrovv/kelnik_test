@@ -1,31 +1,53 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
-
-import type { Apartment, Sort } from '~/src/interfaces/Apartment';
-
-import { SORT_DIRECTIONS, SORTABLE_COLUMN_TYPES } from '~/src/const';
+import { computed, onMounted, ref, watch } from 'vue';
+import { useDebounceFn } from "@vueuse/core"
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+import { useFiltersStore } from '~/src/stores/filters';
+
+import type { Apartment, Sort, Filter } from '~/src/interfaces';
+import { SORT_DIRECTIONS, SORTABLE_COLUMN_TYPES } from '~/src/const';
 
 import ApartmentRow from '~/src/components/ApartmentRow.vue';
 import ApartmentsFilter from '~/src/components/ApartmentsFilter.vue';
 
 const LOAD_STEP = 20;
 
+const filtersStore = useFiltersStore();
+
+const filter = computed(() => ({
+  numberOfRooms: filtersStore.numberOfRooms,
+  cost: filtersStore.cost,
+  area: filtersStore.area,
+}));
+
+const allApartments = ref<Apartment[]>([]);
 const apartments = ref<Apartment[]>([]);
 const offset = ref<number>(LOAD_STEP);
 const totalCount = ref<number>(0);
 const sort = ref<Sort|null>();
+
+const canFetchMore = computed(() => allApartments.value.length < totalCount.value);
 
 onMounted(async () => {
   const data = await fetch(`http://localhost:3001/apartments?_page=1&_per_page=${offset.value}`)
     .then(res => res.json());
 
   apartments.value = data.data;
+  allApartments.value = data.data;
   totalCount.value = data.items;
 });
 
-const canFetchMore = computed(() => apartments.value.length < totalCount.value);
+watch(
+  () => filter.value,
+  (filter) => {
+    debouncedHandleFilterApply(filter);
+  },
+  {
+    deep: true
+  }
+);
 
 const loadMore = async () => {
   offset.value = offset.value + LOAD_STEP;
@@ -33,7 +55,9 @@ const loadMore = async () => {
   const { data } = await fetch(`http://localhost:3001/apartments?_page=${Math.floor(offset.value / LOAD_STEP)}&_per_page=${LOAD_STEP}`)
     .then(res => res.json());
 
-  apartments.value = [...apartments.value, ...data];
+  allApartments.value = [...allApartments.value, ...data];
+
+  handleFilterApply(filter.value);
 
   if (sort !== null) {
     handleSort();
@@ -83,6 +107,27 @@ const setSort = (direction: SORT_DIRECTIONS, columnType: SORTABLE_COLUMN_TYPES) 
 
   handleSort();
 }
+
+const handleFilterApply = (filter: Filter) => {
+  apartments.value = allApartments.value.filter((apartment: Apartment) => {
+    const isCostFilterPassed = apartment.cost >= filter.cost[0] && apartment.cost <= filter.cost[1];
+    const isAreaFilterPassed = apartment.area >= filter.area[0] && apartment.area <= filter.area[1];
+    const isNumberOfRoomsFilterPassed = filter.numberOfRooms === null
+      || apartment.numberOfRooms === filter.numberOfRooms;
+
+
+    return isCostFilterPassed && isAreaFilterPassed && isNumberOfRoomsFilterPassed;
+  });
+
+  if (sort !== null) {
+    handleSort();
+  }
+};
+
+const debouncedHandleFilterApply = useDebounceFn((filter: Filter) => {
+  handleFilterApply(filter);
+}, 500);
+
 </script>
 
 <template>

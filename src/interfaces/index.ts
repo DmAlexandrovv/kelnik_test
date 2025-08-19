@@ -2,7 +2,8 @@ import { SORT_DIRECTIONS, SORTABLE_COLUMN_TYPES } from '~/src/const';
 
 interface Apartment {
   id: string;
-  name: string;
+  number: number;
+  numberOfRooms: number;
   area: number;
   floor: number;
   maxFloor: number;
@@ -14,4 +15,10 @@ interface Sort {
   direction: SORT_DIRECTIONS,
 }
 
-export type { Apartment, Sort };
+interface Filter {
+  cost: [number, number],
+  area: [number, number],
+  numberOfRooms: number | null,
+}
+
+export type { Apartment, Sort, Filter };

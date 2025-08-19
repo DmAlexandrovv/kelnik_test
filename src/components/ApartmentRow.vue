@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import type { PropType } from 'vue';
 
-import type { Apartment } from '~/src/interfaces/Apartment';
+import type { Apartment } from '~/src/interfaces';
 
 const { apartment } = defineProps({
   apartment: {
@@ -20,7 +20,7 @@ const area = computed(() => apartment.area.toString().replace('.', ','));
     <div class="apartment__layout">
       <img src="~/assets/svg/apartmentLayout.svg" alt="Планировка"/>
     </div>
-    <div class="apartment__text fw6">{{ apartment.name }}</div>
+    <div class="apartment__text fw6">{{ apartment.numberOfRooms }}-комнатная №{{ apartment.number }}</div>
     <div class="apartment__text">{{ area }}</div>
     <div class="apartment__text apartment-floor">
       {{ apartment.floor }} из <span class="apartment-floor__max">{{ apartment.maxFloor }}</span>

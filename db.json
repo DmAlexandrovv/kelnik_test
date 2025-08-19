@@ -1,539 +1,606 @@
 {
   "apartments": [
     {
-      "id": "68a383119700ea0960fa51fe",
-      "name": "3-комнатная №4",
-      "area": 69.4,
-      "floor": 13,
-      "cost": 15910948,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311134feb4a2dba5652",
-      "name": "3-комнатная №94",
-      "area": 47.3,
-      "floor": 4,
-      "cost": 11212678,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383114d6565c9ccec11b8",
-      "name": "3-комнатная №128",
-      "area": 79.7,
-      "floor": 10,
-      "cost": 9588182,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383112f86157e11ae9a63",
-      "name": "1-комнатная №18",
-      "area": 90.1,
-      "floor": 12,
-      "cost": 8485983,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311c3fafa99acfd6b39",
-      "name": "3-комнатная №7",
-      "area": 69.7,
-      "floor": 16,
-      "cost": 18991283,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383119088b98d842cdada",
-      "name": "2-комнатная №46",
-      "area": 72,
-      "floor": 13,
-      "cost": 17597746,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311846b1bc2b95ec26c",
-      "name": "3-комнатная №77",
-      "area": 66,
-      "floor": 10,
-      "cost": 12030707,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311a1df9c3833e2ae21",
-      "name": "3-комнатная №69",
-      "area": 62,
-      "floor": 2,
-      "cost": 13402450,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383111ff86218633a3331",
-      "name": "2-комнатная №159",
-      "area": 79.4,
-      "floor": 8,
-      "cost": 14156798,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311d25de02836f52479",
-      "name": "2-комнатная №120",
-      "area": 98.4,
-      "floor": 5,
-      "cost": 17746039,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311fd2aa8112bd46363",
-      "name": "2-комнатная №147",
-      "area": 61.7,
-      "floor": 11,
-      "cost": 15888468,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383111721a9777b05a1c5",
-      "name": "3-комнатная №70",
-      "area": 84.3,
-      "floor": 7,
-      "cost": 5170613,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311fec9472d619c5389",
-      "name": "1-комнатная №66",
-      "area": 79.6,
-      "floor": 14,
-      "cost": 15114671,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a3831194a418becb0c2ec9",
-      "name": "3-комнатная №59",
-      "area": 93.1,
-      "floor": 16,
-      "cost": 6096179,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311a10cd647730c0afd",
-      "name": "3-комнатная №44",
-      "area": 79.6,
-      "floor": 7,
-      "cost": 15945368,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383114ab6491e1bc35111",
-      "name": "3-комнатная №150",
-      "area": 74.9,
-      "floor": 14,
-      "cost": 9224864,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383111f854dc9a38591a5",
-      "name": "1-комнатная №43",
-      "area": 47.1,
-      "floor": 13,
-      "cost": 9881613,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311aea111f1d138a5a7",
-      "name": "3-комнатная №53",
-      "area": 77.6,
-      "floor": 9,
-      "cost": 14090823,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311522bc70d3c36cf71",
-      "name": "1-комнатная №141",
-      "area": 45.2,
+      "id": "68a4da8ee3faac964c98ba2b",
+      "numberOfRooms": 3,
+      "number": 11,
+      "area": 44.3,
       "floor": 15,
-      "cost": 14802523,
+      "cost": 10177973,
       "maxFloor": 17
     },
     {
-      "id": "68a38311f68c65e1985276e0",
-      "name": "3-комнатная №161",
-      "area": 40,
-      "floor": 5,
-      "cost": 5351246,
+      "id": "68a4da8e3e9698c098b51777",
+      "numberOfRooms": 2,
+      "number": 18,
+      "area": 66.1,
+      "floor": 12,
+      "cost": 17492906,
       "maxFloor": 17
     },
     {
-      "id": "68a38311ce36fe2d2f6f0967",
-      "name": "3-комнатная №10",
-      "area": 89.7,
+      "id": "68a4da8ec119365906bbd827",
+      "numberOfRooms": 1,
+      "number": 49,
+      "area": 86,
+      "floor": 9,
+      "cost": 18854271,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e6363c9a14af4224b",
+      "numberOfRooms": 2,
+      "number": 95,
+      "area": 53.4,
+      "floor": 7,
+      "cost": 11449084,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e7785b9eb4851d416",
+      "numberOfRooms": 1,
+      "number": 58,
+      "area": 90.2,
       "floor": 2,
-      "cost": 9367018,
+      "cost": 6392019,
       "maxFloor": 17
     },
     {
-      "id": "68a38311db461c9957dcddba",
-      "name": "2-комнатная №57",
-      "area": 48.8,
+      "id": "68a4da8e7e3f2902ddab6c48",
+      "numberOfRooms": 2,
+      "number": 33,
+      "area": 87.7,
       "floor": 16,
-      "cost": 15643890,
+      "cost": 6004813,
       "maxFloor": 17
     },
     {
-      "id": "68a38311aabe165d8a4aea91",
-      "name": "1-комнатная №11",
-      "area": 98.3,
-      "floor": 6,
-      "cost": 19345646,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a3831166bc09665cc1e4e2",
-      "name": "2-комнатная №74",
-      "area": 84.1,
-      "floor": 5,
-      "cost": 9085458,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311205ed12109a3ea40",
-      "name": "2-комнатная №5",
-      "area": 78.6,
-      "floor": 12,
-      "cost": 9650114,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311ff387e7d89199a79",
-      "name": "1-комнатная №66",
-      "area": 82.3,
-      "floor": 6,
-      "cost": 8052714,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383115751c865b65f259e",
-      "name": "1-комнатная №4",
-      "area": 50.7,
-      "floor": 8,
-      "cost": 12985118,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383115f8edce6641dda44",
-      "name": "1-комнатная №89",
-      "area": 89.2,
-      "floor": 14,
-      "cost": 17140678,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311bf77fa35c202c8d4",
-      "name": "3-комнатная №146",
-      "area": 83.5,
-      "floor": 11,
-      "cost": 9297214,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a3831167cf029d05969dfd",
-      "name": "2-комнатная №150",
-      "area": 72,
-      "floor": 1,
-      "cost": 14811771,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a3831148dccc55d17474ff",
-      "name": "1-комнатная №127",
-      "area": 98.2,
-      "floor": 16,
-      "cost": 6296131,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383119eca5bfa191ddde5",
-      "name": "2-комнатная №62",
-      "area": 66.3,
-      "floor": 6,
-      "cost": 6917194,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383111e3cec1939f5ac51",
-      "name": "1-комнатная №91",
-      "area": 62,
-      "floor": 9,
-      "cost": 16818950,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383111657bfaf84a8c867",
-      "name": "3-комнатная №100",
-      "area": 97.8,
-      "floor": 16,
-      "cost": 19245579,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383114e910f6f16e7407b",
-      "name": "1-комнатная №81",
-      "area": 59.1,
-      "floor": 6,
-      "cost": 14607892,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311124603737733f174",
-      "name": "3-комнатная №152",
-      "area": 87.5,
-      "floor": 1,
-      "cost": 19747229,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311c9d33fc770ccdd3a",
-      "name": "1-комнатная №139",
-      "area": 64.5,
-      "floor": 16,
-      "cost": 11999655,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311ea86986b13277713",
-      "name": "2-комнатная №23",
-      "area": 46.5,
-      "floor": 16,
-      "cost": 7601737,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383116f34dcc34c20e7b0",
-      "name": "2-комнатная №21",
-      "area": 88,
-      "floor": 7,
-      "cost": 14000076,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311ef88b53090999ddc",
-      "name": "3-комнатная №105",
-      "area": 49.3,
-      "floor": 1,
-      "cost": 7228055,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311347d4ddd09b4fd85",
-      "name": "3-комнатная №121",
-      "area": 56.9,
-      "floor": 9,
-      "cost": 10578940,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383114f163e0246051e42",
-      "name": "1-комнатная №126",
-      "area": 64.6,
-      "floor": 7,
-      "cost": 6311502,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a3831193a49b39b261a7ad",
-      "name": "2-комнатная №23",
-      "area": 55.6,
-      "floor": 14,
-      "cost": 16493907,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311a9c3962346a36a31",
-      "name": "1-комнатная №2",
-      "area": 96.4,
-      "floor": 7,
-      "cost": 18163253,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383111e53fedf9a8cf16d",
-      "name": "2-комнатная №96",
-      "area": 53.6,
-      "floor": 7,
-      "cost": 5899804,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a3831160c7699de41cfe2f",
-      "name": "2-комнатная №24",
-      "area": 87,
-      "floor": 1,
-      "cost": 13590406,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311eeb9dcfb0800f0f8",
-      "name": "1-комнатная №46",
-      "area": 64.1,
-      "floor": 12,
-      "cost": 7324752,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383113991154c07436e77",
-      "name": "2-комнатная №141",
-      "area": 93.4,
-      "floor": 11,
-      "cost": 14173559,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311738ee2d07bd85e9d",
-      "name": "1-комнатная №150",
-      "area": 63.3,
-      "floor": 12,
-      "cost": 17607812,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383118aed712c6d1210ce",
-      "name": "1-комнатная №37",
-      "area": 68.4,
+      "id": "68a4da8e89d95c9f7978e066",
+      "numberOfRooms": 3,
+      "number": 126,
+      "area": 81.5,
       "floor": 4,
-      "cost": 16473603,
+      "cost": 13662361,
       "maxFloor": 17
     },
     {
-      "id": "68a3831105784ef7e2f51d34",
-      "name": "3-комнатная №101",
-      "area": 72.7,
+      "id": "68a4da8e1449da91a7f6ac9e",
+      "numberOfRooms": 1,
+      "number": 149,
+      "area": 75.8,
+      "floor": 2,
+      "cost": 14965458,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8eb74f22bf4bacee8a",
+      "numberOfRooms": 1,
+      "number": 120,
+      "area": 79,
+      "floor": 1,
+      "cost": 6161322,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e0d363d372b68c12b",
+      "numberOfRooms": 2,
+      "number": 49,
+      "area": 63.2,
+      "floor": 4,
+      "cost": 17638595,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ec309b0b55c1ea900",
+      "numberOfRooms": 1,
+      "number": 12,
+      "area": 78.2,
+      "floor": 12,
+      "cost": 8362975,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ea711347b7ff4c334",
+      "numberOfRooms": 2,
+      "number": 118,
+      "area": 98,
       "floor": 10,
-      "cost": 10366491,
+      "cost": 17988044,
       "maxFloor": 17
     },
     {
-      "id": "68a38311b63f51366c525488",
-      "name": "3-комнатная №45",
-      "area": 77.7,
-      "floor": 17,
-      "cost": 6799567,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383119621f5c21fb116f5",
-      "name": "1-комнатная №96",
-      "area": 95.7,
-      "floor": 12,
-      "cost": 11230691,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311f786609696cad8fb",
-      "name": "3-комнатная №130",
-      "area": 75.1,
-      "floor": 14,
-      "cost": 13997768,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383117b1c9e87694d40d5",
-      "name": "3-комнатная №163",
-      "area": 59.2,
-      "floor": 12,
-      "cost": 9212934,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a383111174c978f776b9ed",
-      "name": "2-комнатная №136",
-      "area": 52.4,
-      "floor": 15,
-      "cost": 8514782,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311d53df500e685f5f4",
-      "name": "1-комнатная №146",
-      "area": 92.1,
-      "floor": 5,
-      "cost": 8434125,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311ea7c7cbdc9de8d51",
-      "name": "2-комнатная №112",
-      "area": 66.9,
-      "floor": 4,
-      "cost": 12692634,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311a1e0e73f2e6cc799",
-      "name": "1-комнатная №1",
-      "area": 65.1,
-      "floor": 16,
-      "cost": 18040283,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311f091a6ec4e4d229b",
-      "name": "2-комнатная №65",
-      "area": 95.5,
-      "floor": 13,
-      "cost": 10135404,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311c58a83bfcf21ea99",
-      "name": "3-комнатная №149",
-      "area": 64.7,
-      "floor": 4,
-      "cost": 12255099,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a38311eafefc84877250cc",
-      "name": "1-комнатная №139",
-      "area": 44.6,
+      "id": "68a4da8eb3e64e22795273b4",
+      "numberOfRooms": 1,
+      "number": 108,
+      "area": 40.8,
       "floor": 3,
-      "cost": 12147324,
+      "cost": 9876066,
       "maxFloor": 17
     },
     {
-      "id": "68a383117f0d896cfc8c3e76",
-      "name": "2-комнатная №3",
-      "area": 42.8,
-      "floor": 9,
-      "cost": 17571086,
+      "id": "68a4da8eadca4a247f1d5e98",
+      "numberOfRooms": 1,
+      "number": 11,
+      "area": 50.1,
+      "floor": 14,
+      "cost": 10344079,
       "maxFloor": 17
     },
     {
-      "id": "68a38311ae15f6a634405ad3",
-      "name": "1-комнатная №124",
-      "area": 80.6,
-      "floor": 1,
-      "cost": 13432281,
+      "id": "68a4da8e85af44c7063a1172",
+      "numberOfRooms": 1,
+      "number": 92,
+      "area": 80,
+      "floor": 13,
+      "cost": 11869925,
       "maxFloor": 17
     },
     {
-      "id": "68a3831151443fa3b729837b",
-      "name": "3-комнатная №142",
-      "area": 57.7,
+      "id": "68a4da8eb70f66b2406fa4d6",
+      "numberOfRooms": 1,
+      "number": 65,
+      "area": 60.9,
+      "floor": 15,
+      "cost": 15187606,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8eb1dc1cfda45a19f2",
+      "numberOfRooms": 1,
+      "number": 26,
+      "area": 95.5,
+      "floor": 12,
+      "cost": 14340773,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e87596cebdd72f730",
+      "numberOfRooms": 2,
+      "number": 66,
+      "area": 69.1,
+      "floor": 13,
+      "cost": 17181033,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ee40f4877f52d3bb9",
+      "numberOfRooms": 3,
+      "number": 46,
+      "area": 84.1,
       "floor": 16,
-      "cost": 15706690,
+      "cost": 16817371,
       "maxFloor": 17
     },
     {
-      "id": "68a38311e1a57622d1b1e0a2",
-      "name": "1-комнатная №62",
-      "area": 45.3,
+      "id": "68a4da8e40bbc44e54a37cf7",
+      "numberOfRooms": 2,
+      "number": 116,
+      "area": 69.2,
+      "floor": 8,
+      "cost": 19695743,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8eb73aa5cedaa2f648",
+      "numberOfRooms": 1,
+      "number": 143,
+      "area": 43.6,
+      "floor": 14,
+      "cost": 15324424,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e052b3c9ce545888d",
+      "numberOfRooms": 2,
+      "number": 77,
+      "area": 41.6,
+      "floor": 16,
+      "cost": 15556816,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e47028f7145e9809f",
+      "numberOfRooms": 2,
+      "number": 135,
+      "area": 91.8,
+      "floor": 17,
+      "cost": 11350048,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e85c9bb34c893794e",
+      "numberOfRooms": 2,
+      "number": 120,
+      "area": 85.9,
+      "floor": 8,
+      "cost": 12903455,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e6bdd010148b0a795",
+      "numberOfRooms": 1,
+      "number": 86,
+      "area": 70.3,
+      "floor": 16,
+      "cost": 5482651,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e4b51fbb4680de0b3",
+      "numberOfRooms": 3,
+      "number": 142,
+      "area": 41.2,
+      "floor": 17,
+      "cost": 19288044,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ebc7d22b1541034a2",
+      "numberOfRooms": 1,
+      "number": 29,
+      "area": 61,
+      "floor": 12,
+      "cost": 6492588,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ec856266908b9df46",
+      "numberOfRooms": 3,
+      "number": 38,
+      "area": 79.6,
+      "floor": 8,
+      "cost": 10604748,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e298dbc802565f317",
+      "numberOfRooms": 2,
+      "number": 95,
+      "area": 73.3,
+      "floor": 8,
+      "cost": 5834656,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e1b7b757ee0688f99",
+      "numberOfRooms": 3,
+      "number": 131,
+      "area": 72.2,
       "floor": 2,
-      "cost": 10099608,
+      "cost": 17126736,
       "maxFloor": 17
     },
     {
-      "id": "68a38311645ed8d99132b8a7",
-      "name": "1-комнатная №122",
-      "area": 71.6,
+      "id": "68a4da8ee3a2fc5a9e60d2aa",
+      "numberOfRooms": 1,
+      "number": 50,
+      "area": 53.9,
+      "floor": 3,
+      "cost": 7011930,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e484113f8e0f05de1",
+      "numberOfRooms": 3,
+      "number": 50,
+      "area": 43.5,
+      "floor": 7,
+      "cost": 11547109,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e298a4b97da3577e4",
+      "numberOfRooms": 2,
+      "number": 35,
+      "area": 65.3,
+      "floor": 5,
+      "cost": 18403783,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e73626f1c0fa7d79d",
+      "numberOfRooms": 1,
+      "number": 150,
+      "area": 60.7,
+      "floor": 13,
+      "cost": 10958363,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ef64f23754cb3470f",
+      "numberOfRooms": 2,
+      "number": 64,
+      "area": 96.4,
+      "floor": 6,
+      "cost": 6870318,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e61894a3f17dcd1b2",
+      "numberOfRooms": 3,
+      "number": 60,
+      "area": 63.7,
+      "floor": 7,
+      "cost": 13245541,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e36382e2655373279",
+      "numberOfRooms": 3,
+      "number": 75,
+      "area": 99.4,
+      "floor": 17,
+      "cost": 18711009,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e9db3b3a2530a83d3",
+      "numberOfRooms": 3,
+      "number": 75,
+      "area": 40.8,
+      "floor": 11,
+      "cost": 6829151,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ebba79becca0a31ea",
+      "numberOfRooms": 2,
+      "number": 52,
+      "area": 64.6,
+      "floor": 9,
+      "cost": 16347014,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e1716e0a1e78d0e2c",
+      "numberOfRooms": 2,
+      "number": 54,
+      "area": 88.9,
+      "floor": 4,
+      "cost": 12589960,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ea09bee217649bea9",
+      "numberOfRooms": 2,
+      "number": 98,
+      "area": 76.9,
+      "floor": 11,
+      "cost": 14147933,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e0b7c3730a908a84c",
+      "numberOfRooms": 1,
+      "number": 17,
+      "area": 48.8,
+      "floor": 15,
+      "cost": 16248402,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e3deed3a43e081a47",
+      "numberOfRooms": 1,
+      "number": 133,
+      "area": 89.5,
+      "floor": 12,
+      "cost": 19123498,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ee8ac2c34b1503581",
+      "numberOfRooms": 3,
+      "number": 69,
+      "area": 57,
+      "floor": 9,
+      "cost": 10077070,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e0ceaef953fe7a6c1",
+      "numberOfRooms": 2,
+      "number": 19,
+      "area": 76.3,
+      "floor": 8,
+      "cost": 9357747,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e93e0881f8a7ef6d8",
+      "numberOfRooms": 2,
+      "number": 14,
+      "area": 87.6,
+      "floor": 5,
+      "cost": 5453912,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e17e93e0783d6d414",
+      "numberOfRooms": 2,
+      "number": 142,
+      "area": 70.8,
       "floor": 16,
-      "cost": 16067948,
+      "cost": 15476313,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e430e7a4628d4ae6a",
+      "numberOfRooms": 3,
+      "number": 105,
+      "area": 95.8,
+      "floor": 12,
+      "cost": 19205059,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e373bbc5121a59e68",
+      "numberOfRooms": 2,
+      "number": 117,
+      "area": 58.4,
+      "floor": 12,
+      "cost": 12158813,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ed833fa7cc610af28",
+      "numberOfRooms": 2,
+      "number": 84,
+      "area": 70.3,
+      "floor": 13,
+      "cost": 16842531,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ecb6fde4aec6123cb",
+      "numberOfRooms": 2,
+      "number": 86,
+      "area": 65.9,
+      "floor": 15,
+      "cost": 13775494,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e555abd77c7cff7f1",
+      "numberOfRooms": 2,
+      "number": 72,
+      "area": 87.4,
+      "floor": 10,
+      "cost": 9598583,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e7d49ffd4ffb1b65e",
+      "numberOfRooms": 1,
+      "number": 132,
+      "area": 93.4,
+      "floor": 4,
+      "cost": 14954138,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ebeca048f9022bbb5",
+      "numberOfRooms": 3,
+      "number": 96,
+      "area": 42.6,
+      "floor": 15,
+      "cost": 6682781,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e4672d220bf6d2c23",
+      "numberOfRooms": 2,
+      "number": 99,
+      "area": 75.5,
+      "floor": 16,
+      "cost": 14812114,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e78a30c3b5160ac0d",
+      "numberOfRooms": 3,
+      "number": 95,
+      "area": 70.5,
+      "floor": 16,
+      "cost": 7434838,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e0004d5a2f7b7700a",
+      "numberOfRooms": 1,
+      "number": 4,
+      "area": 46.1,
+      "floor": 14,
+      "cost": 17302973,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ec8e35494f706c0a5",
+      "numberOfRooms": 3,
+      "number": 51,
+      "area": 73.9,
+      "floor": 17,
+      "cost": 14141850,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e256c800f040fa160",
+      "numberOfRooms": 1,
+      "number": 155,
+      "area": 48.9,
+      "floor": 14,
+      "cost": 19720076,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e4325f4da4997c1dc",
+      "numberOfRooms": 2,
+      "number": 147,
+      "area": 47,
+      "floor": 10,
+      "cost": 10704254,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e9461ccae3c5d4d45",
+      "numberOfRooms": 2,
+      "number": 29,
+      "area": 84.7,
+      "floor": 6,
+      "cost": 5394633,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e2b21c668ed52fe8d",
+      "numberOfRooms": 2,
+      "number": 149,
+      "area": 69.2,
+      "floor": 10,
+      "cost": 11547592,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e7e27849a44ffd2c5",
+      "numberOfRooms": 2,
+      "number": 18,
+      "area": 71.3,
+      "floor": 15,
+      "cost": 10098121,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e8de1c255dc9c8ac2",
+      "numberOfRooms": 2,
+      "number": 53,
+      "area": 82.6,
+      "floor": 3,
+      "cost": 9810196,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e30393c5c48432213",
+      "numberOfRooms": 2,
+      "number": 67,
+      "area": 51.8,
+      "floor": 5,
+      "cost": 19159794,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e2f168eb502bc8532",
+      "numberOfRooms": 3,
+      "number": 163,
+      "area": 99.5,
+      "floor": 4,
+      "cost": 17008332,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e126fe7b5c04800d2",
+      "numberOfRooms": 3,
+      "number": 69,
+      "area": 93,
+      "floor": 7,
+      "cost": 19501071,
       "maxFloor": 17
     }
   ]

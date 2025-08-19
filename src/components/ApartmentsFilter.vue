@@ -59,11 +59,11 @@ const { setNumberOfRooms, setArea, setCost, reset } = filtersStore;
         </span>
       </div>
       <vue-slider
-          :model-value="areaSliderValue"
-          :min="DEFAULT_AREA_FILTER_RANGE[0]"
-          :max="DEFAULT_AREA_FILTER_RANGE[1]"
-          tooltip="none"
-          @update:model-value="setArea"
+        :model-value="areaSliderValue"
+        :min="DEFAULT_AREA_FILTER_RANGE[0]"
+        :max="DEFAULT_AREA_FILTER_RANGE[1]"
+        tooltip="none"
+        @update:model-value="setArea"
       />
     </div>
     <button class="apartments-filter__reset-btn" @click="reset">

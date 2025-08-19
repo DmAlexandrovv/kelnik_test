@@ -1,14 +1,10 @@
 import { defineStore } from 'pinia';
 import { DEFAULT_COST_FILTER_RANGE, DEFAULT_AREA_FILTER_RANGE } from '~/src/const';
 
-interface State {
-  cost: [number, number],
-  area: [number, number],
-  numberOfRooms: number | null,
-}
+import type { Filter } from '~/src/interfaces';
 
 export const useFiltersStore = defineStore('filters', {
-  state: (): State => {
+  state: (): Filter => {
     return {
       cost: DEFAULT_COST_FILTER_RANGE as [number, number],
       area: DEFAULT_AREA_FILTER_RANGE as [number, number],
