@@ -14,6 +14,9 @@ export default defineNuxtConfig({
   css: ['~/assets/fonts.scss', '~/assets/default.scss', 'tachyons/css/tachyons.min.css'],
   plugins: [
     '~/src/plugins/fontawesome.ts',
-    '~/src/plugins/pinia.ts',
+  ],
+  modules: [
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
   ],
 })

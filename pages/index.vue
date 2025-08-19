@@ -39,13 +39,18 @@ onMounted(async () => {
   totalCount.value = data.items;
 });
 
+const debouncedHandleFilterApply = useDebounceFn((filter: Filter) => {
+  handleFilterApply(filter);
+}, 500);
+
 watch(
   () => filter.value,
   (filter) => {
     debouncedHandleFilterApply(filter);
   },
   {
-    deep: true
+    deep: true,
+    immediate: true,
   }
 );
 
@@ -123,10 +128,6 @@ const handleFilterApply = (filter: Filter) => {
     handleSort();
   }
 };
-
-const debouncedHandleFilterApply = useDebounceFn((filter: Filter) => {
-  handleFilterApply(filter);
-}, 500);
 
 </script>
 

@@ -11,6 +11,7 @@ export const useFiltersStore = defineStore('filters', {
       numberOfRooms: null,
     }
   },
+
   actions: {
     setCost(range: [number, number]) {
       this.cost = range;
@@ -34,4 +35,6 @@ export const useFiltersStore = defineStore('filters', {
       this.numberOfRooms = null;
     }
   },
+
+  persist: true,
 });
