@@ -1,19 +1,32 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueSlider from 'vue-3-slider-component';
 
+import { useFiltersStore } from '~/src/stores/filters';
+
 import { MAX_NUMBER_OF_ROOMS, DEFAULT_COST_FILTER_RANGE, DEFAULT_AREA_FILTER_RANGE } from '~/src/const';
 
-const costSliderValue = ref<number[]>(DEFAULT_COST_FILTER_RANGE);
-const areaSliderValue = ref<number[]>(DEFAULT_AREA_FILTER_RANGE);
+const filtersStore = useFiltersStore();
+
+const numberOfRooms = computed(() => filtersStore.numberOfRooms);
+const costSliderValue = computed(() => filtersStore.cost);
+const areaSliderValue = computed(() => filtersStore.area);
+
+const { setNumberOfRooms, setArea, setCost, reset } = filtersStore;
 
 </script>
 
 <template>
   <div class="apartments-filter">
     <div class="number-of-rooms-filter">
-      <button v-for="num in MAX_NUMBER_OF_ROOMS" :key="num" :class="{ 'number-of-rooms-filter__btn': true, 'number-of-rooms-filter__btn--active': num === 2 }">
+      <button
+        v-for="num in MAX_NUMBER_OF_ROOMS"
+        :key="num"
+        :disabled="num === 4"
+        :class="{ 'number-of-rooms-filter__btn': true, 'number-of-rooms-filter__btn--active': num === numberOfRooms }"
+        @click="setNumberOfRooms(num)"
+      >
         {{ num }}к
       </button>
     </div>
@@ -28,10 +41,11 @@ const areaSliderValue = ref<number[]>(DEFAULT_AREA_FILTER_RANGE);
         </span>
       </div>
       <vue-slider
-        v-model="costSliderValue"
+        :model-value="costSliderValue"
         :min="DEFAULT_COST_FILTER_RANGE[0]"
         :max="DEFAULT_COST_FILTER_RANGE[1]"
         tooltip="none"
+        @update:model-value="setCost"
       />
     </div>
     <div class="cost-filter mt4">
@@ -45,13 +59,14 @@ const areaSliderValue = ref<number[]>(DEFAULT_AREA_FILTER_RANGE);
         </span>
       </div>
       <vue-slider
-          v-model="areaSliderValue"
+          :model-value="areaSliderValue"
           :min="DEFAULT_AREA_FILTER_RANGE[0]"
           :max="DEFAULT_AREA_FILTER_RANGE[1]"
           tooltip="none"
+          @update:model-value="setArea"
       />
     </div>
-    <button class="apartments-filter__reset-btn">
+    <button class="apartments-filter__reset-btn" @click="reset">
       Сбросить параметры
       <font-awesome-icon
         icon="close"
@@ -80,7 +95,7 @@ const areaSliderValue = ref<number[]>(DEFAULT_AREA_FILTER_RANGE);
   .number-of-rooms-filter {
     &__btn {
       border-radius: 50%;
-      background: transparent;
+      background: $white;
       width: 44px;
       height: 44px;
       margin-right: 10px;
@@ -103,6 +118,11 @@ const areaSliderValue = ref<number[]>(DEFAULT_AREA_FILTER_RANGE);
       &:hover {
         transform: scale(1.1);
       }
+
+      &:disabled{
+        opacity: .2;
+        cursor: not-allowed;
+      }
     }
   }
 
@@ -117,6 +137,10 @@ const areaSliderValue = ref<number[]>(DEFAULT_AREA_FILTER_RANGE);
     font-weight: 400;
     line-height: 20px;
     color: $dark;
+
+    &:hover {
+      color: $danger;
+    }
 
     svg {
       margin-left: 10px;

@@ -25,7 +25,11 @@ export const useFiltersStore = defineStore('filters', {
     },
 
     setNumberOfRooms(value: number | null) {
-      this.numberOfRooms = value;
+      if (value === this.numberOfRooms) {
+        this.numberOfRooms = null;
+      } else {
+        this.numberOfRooms = value;
+      }
     },
 
     reset() {
