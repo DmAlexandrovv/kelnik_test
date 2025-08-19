@@ -46,5 +46,12 @@ onUnmounted(() => {
 
   cursor: pointer;
   font-size: 18px;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+    background: $green-active;
+  }
 }
 </style>
