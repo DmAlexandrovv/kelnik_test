@@ -355,6 +355,11 @@ const debouncedHandleFilterApply = useDebounceFn((filter: Filter) => {
     cursor: pointer;
     font-size: 16px;
     line-height: 24px;
+
+    &:hover {
+      background: $green-active;
+      color: $white;
+    }
   }
 }
 </style>
