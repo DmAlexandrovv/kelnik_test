@@ -1,0 +1,14 @@
+export const MAX_NUMBER_OF_ROOMS = 4;
+export const DEFAULT_COST_FILTER_RANGE = [5000000, 20000000];
+export const DEFAULT_AREA_FILTER_RANGE = [5000000, 20000000];
+
+export enum SORT_DIRECTIONS {
+  ASC,
+  DESC,
+}
+
+export enum SORTABLE_COLUMN_TYPES {
+  AREA,
+  FLOOR,
+  COST,
+}

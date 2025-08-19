@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: ['~/assets/fonts.scss', '~/assets/default.scss'],
+  css: ['~/assets/fonts.scss', '~/assets/default.scss', 'tachyons/css/tachyons.min.css'],
   plugins: [
     '~/src/plugins/fontawesome.ts'
   ],

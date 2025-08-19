@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 
-import { type Apartment, type Sort, SORT_DIRECTIONS, SORTABLE_COLUMN_TYPES } from '~/src/interfaces/Apartment';
-import ApartmentRow from '~/src/components/ApartmentRow.vue';
+import type { Apartment, Sort } from '~/src/interfaces/Apartment';
+
+import { SORT_DIRECTIONS, SORTABLE_COLUMN_TYPES } from '~/src/const';
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+import ApartmentRow from '~/src/components/ApartmentRow.vue';
+import ApartmentsFilter from '~/src/components/ApartmentsFilter.vue';
 
 const LOAD_STEP = 20;
 
@@ -83,116 +88,121 @@ const setSort = (direction: SORT_DIRECTIONS, columnType: SORTABLE_COLUMN_TYPES) 
 <template>
   <div class="apartments-page">
     <h2 class="apartments-page__title">Квартиры</h2>
-    <ul class="apartments-list" v-if="apartments.length">
-      <li class="apartments-list__header">
-        <div class="apartments-list__text apartments-list-column">Планировка</div>
-        <div class="apartments-list__text apartments-list-column">Квартира</div>
-        <div class="apartments-list-column">
-          <span
-            :class="{
-              'apartments-list__text': true,
-              'apartments-list__text--active': sort?.columnType === SORTABLE_COLUMN_TYPES.AREA
-            }"
+    <div class="apartments-page-content">
+      <div class="apartments-list-wrapper">
+        <ul class="apartments-list" v-if="apartments.length">
+          <li class="apartments-list__header">
+            <div class="apartments-list__text apartments-list-column">Планировка</div>
+            <div class="apartments-list__text apartments-list-column">Квартира</div>
+            <div class="apartments-list-column">
+              <span
+                :class="{
+                  'apartments-list__text': true,
+                  'apartments-list__text--active': sort?.columnType === SORTABLE_COLUMN_TYPES.AREA
+                }"
+              >
+                S, м²
+              </span>
+              <div class="apartments-list-column__sort sort">
+                <font-awesome-icon
+                  icon="chevron-up"
+                  :class="{
+                    'sort__control': true,
+                    'sort__control--up': true,
+                    'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.AREA && sort?.direction === SORT_DIRECTIONS.ASC
+                  }"
+                  @click="setSort(SORT_DIRECTIONS.ASC, SORTABLE_COLUMN_TYPES.AREA)"
+                />
+                <font-awesome-icon
+                  icon="chevron-down"
+                  :class="{
+                    'sort__control': true,
+                    'sort__control--down': true,
+                    'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.AREA && sort?.direction === SORT_DIRECTIONS.DESC
+                  }"
+                  @click="setSort(SORT_DIRECTIONS.DESC, SORTABLE_COLUMN_TYPES.AREA)"
+                />
+              </div>
+            </div>
+            <div class="apartments-list-column">
+              <span
+                :class="{
+                  'apartments-list__text': true,
+                  'apartments-list__text--active': sort?.columnType === SORTABLE_COLUMN_TYPES.FLOOR
+                }"
+              >
+                Этаж
+              </span>
+              <div class="apartments-list-column__sort sort">
+                <font-awesome-icon
+                  icon="chevron-up"
+                  :class="{
+                    'sort__control': true,
+                    'sort__control--up': true,
+                    'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.FLOOR && sort?.direction === SORT_DIRECTIONS.ASC
+                  }"
+                  @click="setSort(SORT_DIRECTIONS.ASC, SORTABLE_COLUMN_TYPES.FLOOR)"
+                />
+                <font-awesome-icon
+                  icon="chevron-down"
+                  :class="{
+                    'sort__control': true,
+                    'sort__control--down': true,
+                    'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.FLOOR && sort?.direction === SORT_DIRECTIONS.DESC
+                  }"
+                  @click="setSort(SORT_DIRECTIONS.DESC, SORTABLE_COLUMN_TYPES.FLOOR)"
+                />
+              </div>
+            </div>
+            <div class="apartments-list-column">
+              <span
+                :class="{
+                  'apartments-list__text': true,
+                  'apartments-list__text--active': sort?.columnType === SORTABLE_COLUMN_TYPES.COST
+                }"
+              >
+                Цена, ₽
+              </span>
+              <div class="apartments-list-column__sort sort">
+                <font-awesome-icon
+                  icon="chevron-up"
+                  :class="{
+                    'sort__control': true,
+                    'sort__control--up': true,
+                    'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.COST && sort?.direction === SORT_DIRECTIONS.ASC
+                  }"
+                  @click="setSort(SORT_DIRECTIONS.ASC, SORTABLE_COLUMN_TYPES.COST)"
+                />
+                <font-awesome-icon
+                  icon="chevron-down"
+                  :class="{
+                    'sort__control': true,
+                    'sort__control--down': true,
+                    'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.COST && sort?.direction === SORT_DIRECTIONS.DESC
+                  }"
+                  @click="setSort(SORT_DIRECTIONS.DESC, SORTABLE_COLUMN_TYPES.COST)"
+                />
+              </div>
+            </div>
+          </li>
+          <apartment-row
+            v-for="apartment in apartments"
+            :key="apartment.id"
+            :apartment="apartment"
+            class="apartments-list__apartment"
           >
-            S, м²
-          </span>
-          <div class="apartments-list-column__sort sort">
-            <font-awesome-icon
-              icon="chevron-up"
-              :class="{
-                'sort__control': true,
-                'sort__control--up': true,
-                'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.AREA && sort?.direction === SORT_DIRECTIONS.ASC
-              }"
-              @click="setSort(SORT_DIRECTIONS.ASC, SORTABLE_COLUMN_TYPES.AREA)"
-            />
-            <font-awesome-icon
-              icon="chevron-down"
-              :class="{
-                'sort__control': true,
-                'sort__control--down': true,
-                'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.AREA && sort?.direction === SORT_DIRECTIONS.DESC
-              }"
-              @click="setSort(SORT_DIRECTIONS.DESC, SORTABLE_COLUMN_TYPES.AREA)"
-            />
-          </div>
-        </div>
-        <div class="apartments-list-column">
-          <span
-            :class="{
-              'apartments-list__text': true,
-              'apartments-list__text--active': sort?.columnType === SORTABLE_COLUMN_TYPES.FLOOR
-            }"
-          >
-            Этаж
-          </span>
-          <div class="apartments-list-column__sort sort">
-            <font-awesome-icon
-              icon="chevron-up"
-              :class="{
-                'sort__control': true,
-                'sort__control--up': true,
-                'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.FLOOR && sort?.direction === SORT_DIRECTIONS.ASC
-              }"
-              @click="setSort(SORT_DIRECTIONS.ASC, SORTABLE_COLUMN_TYPES.FLOOR)"
-            />
-            <font-awesome-icon
-              icon="chevron-down"
-              :class="{
-                'sort__control': true,
-                'sort__control--down': true,
-                'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.FLOOR && sort?.direction === SORT_DIRECTIONS.DESC
-              }"
-              @click="setSort(SORT_DIRECTIONS.DESC, SORTABLE_COLUMN_TYPES.FLOOR)"
-            />
-          </div>
-        </div>
-        <div class="apartments-list-column">
-          <span
-            :class="{
-              'apartments-list__text': true,
-              'apartments-list__text--active': sort?.columnType === SORTABLE_COLUMN_TYPES.COST
-            }"
-          >
-            Цена, ₽
-          </span>
-          <div class="apartments-list-column__sort sort">
-            <font-awesome-icon
-              icon="chevron-up"
-              :class="{
-                'sort__control': true,
-                'sort__control--up': true,
-                'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.COST && sort?.direction === SORT_DIRECTIONS.ASC
-              }"
-              @click="setSort(SORT_DIRECTIONS.ASC, SORTABLE_COLUMN_TYPES.COST)"
-            />
-            <font-awesome-icon
-              icon="chevron-down"
-              :class="{
-                'sort__control': true,
-                'sort__control--down': true,
-                'sort__control--active': sort?.columnType === SORTABLE_COLUMN_TYPES.COST && sort?.direction === SORT_DIRECTIONS.DESC
-              }"
-              @click="setSort(SORT_DIRECTIONS.DESC, SORTABLE_COLUMN_TYPES.COST)"
-            />
-          </div>
-        </div>
-      </li>
-      <apartment-row
-        v-for="apartment in apartments"
-        :key="apartment.id"
-        :apartment="apartment"
-        class="apartments-list__apartment"
-      >
-      </apartment-row>
-    </ul>
-    <button
-      v-if="canFetchMore"
-      class="apartments-page__load-more-btn"
-      @click="loadMore"
-    >
-      Загрузить еще
-    </button>
+          </apartment-row>
+        </ul>
+        <button
+          v-if="canFetchMore"
+          class="apartments-list-wrapper__load-more-btn fw6"
+          @click="loadMore"
+        >
+          Загрузить еще
+        </button>
+      </div>
+      <apartments-filter></apartments-filter>
+    </div>
   </div>
 </template>
 
@@ -201,6 +211,11 @@ const setSort = (direction: SORT_DIRECTIONS, columnType: SORTABLE_COLUMN_TYPES) 
   max-width: 1440px;
   margin: 0 auto;
   padding: 96px 80px;
+
+  &-content {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 
   &__title {
     color: $dark;
@@ -261,6 +276,13 @@ const setSort = (direction: SORT_DIRECTIONS, columnType: SORTABLE_COLUMN_TYPES) 
           color: $dark;
           cursor: pointer;
 
+          transition: transform 0.3s;
+
+          &:hover {
+            color: $green-active;
+            transform: scale(1.6);
+          }
+
           &--down {
             top: -2px;
           }
@@ -277,7 +299,7 @@ const setSort = (direction: SORT_DIRECTIONS, columnType: SORTABLE_COLUMN_TYPES) 
     }
   }
 
-  &__load-more-btn {
+  .apartments-list-wrapper__load-more-btn {
     border-radius: 25px;
     border: 1px solid $stroke;
     background: $white;
@@ -286,7 +308,6 @@ const setSort = (direction: SORT_DIRECTIONS, columnType: SORTABLE_COLUMN_TYPES) 
     margin-top: 40px;
 
     cursor: pointer;
-    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
   }

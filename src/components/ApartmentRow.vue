@@ -20,7 +20,7 @@ const area = computed(() => apartment.area.toString().replace('.', ','));
     <div class="apartment__layout">
       <img src="~/assets/svg/apartmentLayout.svg" alt="Планировка"/>
     </div>
-    <div class="apartment__text">{{ apartment.name }}</div>
+    <div class="apartment__text fw6">{{ apartment.name }}</div>
     <div class="apartment__text">{{ area }}</div>
     <div class="apartment__text apartment-floor">
       {{ apartment.floor }} из <span class="apartment-floor__max">{{ apartment.maxFloor }}</span>
@@ -36,7 +36,6 @@ const area = computed(() => apartment.area.toString().replace('.', ','));
   }
 
   &__text {
-    font-weight: 400;
     color: $dark;
     font-size: 16px;
     line-height: 24px;
