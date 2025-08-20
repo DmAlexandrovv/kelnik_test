@@ -2,6 +2,8 @@
 
 ## Setup
 
+Node version - 20.15.1, do not garante that work at another node version
+
 Make sure to install dependencies:
 
 ```bash
