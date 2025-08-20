@@ -151,19 +151,17 @@ const { existingNumberOfRooms } = defineProps({
     }
   }
 
-  :deep {
-    .vue-slider-dot-handle {
-      background: $green-active;
-      box-shadow: none;
-    }
+  :deep(.vue-slider-dot-handle) {
+    background: $green-active;
+    box-shadow: none;
+  }
 
-    .vue-slider-process {
-      background: $green-active;
-    }
+  :deep(.vue-slider-process) {
+    background: $green-active;
+  }
 
-    .vue-slider-rail {
-      background: $green-light;
-    }
+  :deep(.vue-slider-rail) {
+    background: $green-light;
   }
 }
 </style>
