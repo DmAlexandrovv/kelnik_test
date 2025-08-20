@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue';
-import { useDebounceFn } from "@vueuse/core"
+import { useDebounceFn, useMediaQuery } from "@vueuse/core"
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -29,6 +29,7 @@ const totalCount = ref<number>(0);
 const sort = ref<Sort|null>();
 
 const canFetchMore = computed(() => allApartments.value.length < totalCount.value);
+const isLaptop = useMediaQuery('(max-width: 960px)');
 
 onMounted(async () => {
   const data = await fetch(`http://localhost:3001/apartments?_page=1&_per_page=${offset.value}`)
@@ -138,8 +139,8 @@ const handleFilterApply = (filter: Filter) => {
       <div class="apartments-list-wrapper">
         <ul class="apartments-list" v-if="apartments.length">
           <li class="apartments-list__header">
-            <div class="apartments-list__text apartments-list-column">Планировка</div>
-            <div class="apartments-list__text apartments-list-column">Квартира</div>
+            <div class="apartments-list__text apartments-list-column" v-if="!isLaptop">Планировка</div>
+            <div class="apartments-list__text apartments-list-column" v-if="!isLaptop">Квартира</div>
             <div class="apartments-list-column">
               <span
                 :class="{
@@ -260,7 +261,7 @@ const handleFilterApply = (filter: Filter) => {
 
   &-content {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 3fr 2fr;
   }
 
   &__title {
@@ -279,7 +280,7 @@ const handleFilterApply = (filter: Filter) => {
     &__apartment,
     &__header {
       display: grid;
-      grid-template-columns: 80px 1fr 120px 120px 120px;
+      grid-template-columns: minmax(80px, 1fr) minmax(150px, 2fr) minmax(40px, 1fr) minmax(40px, 1fr) minmax(70px, 1fr);
       gap: 10px;
     }
 
@@ -360,6 +361,20 @@ const handleFilterApply = (filter: Filter) => {
     &:hover {
       background: $green-active;
       color: $white;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .apartments-page {
+    .apartments-list {
+      &__header {
+        grid-template-columns: 60px 60px 90px;
+      }
+
+      &__apartment {
+        grid-template-columns: auto 80px;
+      }
     }
   }
 }

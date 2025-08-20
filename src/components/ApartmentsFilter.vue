@@ -77,7 +77,6 @@ const { setNumberOfRooms, setArea, setCost, reset } = filtersStore;
 
 <style scoped lang="scss">
 .apartments-filter {
-  width: 400px;
   height: 400px;
   border-radius: 20px;
   padding: 40px;
