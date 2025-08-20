@@ -1,11 +1,3 @@
-<template>
-  <div class="scroll-up">
-    <button v-if="isButtonVisible" class="scroll-up__btn" @click="handleScroll">
-      <font-awesome-icon icon="arrow-up" />
-    </button>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -28,6 +20,14 @@ onUnmounted(() => {
   window.removeEventListener('scroll', scrollListener);
 });
 </script>
+
+<template>
+  <div class="scroll-up">
+    <button v-if="isButtonVisible" class="scroll-up__btn" @click="handleScroll">
+      <FontAwesomeIcon icon="arrow-up" />
+    </button>
+  </div>
+</template>
 
 <style scoped lang="scss">
 .scroll-up__btn {

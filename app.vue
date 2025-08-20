@@ -2,7 +2,7 @@
   <div>
     <NuxtRouteAnnouncer />
     <NuxtPage />
-    <scroll-up></scroll-up>
+    <ScrollUp></ScrollUp>
   </div>
 </template>
 

@@ -69,7 +69,7 @@ const loadMore = async () => {
 
   handleFilterApply(filter.value);
 
-  if (sort !== null) {
+  if (sort.value) {
     handleSort();
   }
 }
@@ -129,7 +129,7 @@ const handleFilterApply = (filter: Filter) => {
     return isCostFilterPassed && isAreaFilterPassed && isNumberOfRoomsFilterPassed;
   });
 
-  if (sort !== null) {
+  if (sort.value) {
     handleSort();
   }
 };
@@ -236,13 +236,13 @@ const handleFilterApply = (filter: Filter) => {
               </div>
             </div>
           </li>
-          <apartment-row
+          <ApartmentRow
             v-for="apartment in apartments"
             :key="apartment.id"
             :apartment="apartment"
             class="apartments-list__apartment"
           >
-          </apartment-row>
+          </ApartmentRow>
         </ul>
         <button
           v-if="canFetchMore"
@@ -252,7 +252,7 @@ const handleFilterApply = (filter: Filter) => {
           Загрузить еще
         </button>
       </div>
-      <apartments-filter :existing-number-of-rooms="existingNumberOfRooms"></apartments-filter>
+      <ApartmentsFilter :existing-number-of-rooms="existingNumberOfRooms"></ApartmentsFilter>
     </div>
   </div>
 </template>

@@ -46,7 +46,7 @@ const { existingNumberOfRooms } = defineProps({
           <span class="o-50">до</span> <span class="fw6">{{ costSliderValue[1] }}</span>
         </span>
       </div>
-      <vue-slider
+      <VueSlider
         :model-value="costSliderValue"
         :min="DEFAULT_COST_FILTER_RANGE[0]"
         :max="DEFAULT_COST_FILTER_RANGE[1]"
@@ -64,7 +64,7 @@ const { existingNumberOfRooms } = defineProps({
           <span class="o-50">до</span> <span class="fw6">{{ areaSliderValue[1] }}</span>
         </span>
       </div>
-      <vue-slider
+      <VueSlider
         :model-value="areaSliderValue"
         :min="DEFAULT_AREA_FILTER_RANGE[0]"
         :max="DEFAULT_AREA_FILTER_RANGE[1]"
@@ -74,7 +74,7 @@ const { existingNumberOfRooms } = defineProps({
     </div>
     <button class="apartments-filter__reset-btn" @click="reset">
       Сбросить параметры
-      <font-awesome-icon
+      <FontAwesomeIcon
         icon="close"
       />
     </button>
