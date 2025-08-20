@@ -266,6 +266,7 @@ const handleFilterApply = (filter: Filter) => {
   &-content {
     display: grid;
     grid-template-columns: 3fr 2fr;
+    column-gap: 40px;
   }
 
   &__title {
