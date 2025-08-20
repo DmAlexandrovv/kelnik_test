@@ -27,7 +27,7 @@ const { setNumberOfRooms, setArea, setCost, reset } = filtersStore;
         :class="{ 'number-of-rooms-filter__btn': true, 'number-of-rooms-filter__btn--active': num === numberOfRooms }"
         @click="setNumberOfRooms(num)"
       >
-        {{ num }}к
+        <span :class="{ 'o-20': num === 4 }">{{ num }}к</span>
       </button>
     </div>
     <div class="cost-filter mt4">
@@ -108,18 +108,17 @@ const { setNumberOfRooms, setArea, setCost, reset } = filtersStore;
       transition: transform 0.3s;
 
       &--active,
-      &:hover {
+      &:hover:not(:disabled) {
         background: $green-active;
         color: $white;
         box-shadow: 0 4px 8px $green-light;
       }
 
-      &:hover {
+      &:hover:not(:disabled) {
         transform: scale(1.1);
       }
 
-      &:disabled{
-        opacity: .2;
+      &:disabled {
         cursor: not-allowed;
       }
     }
