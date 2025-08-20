@@ -141,7 +141,7 @@ const handleFilterApply = (filter: Filter) => {
     <h2 class="apartments-page__title">Квартиры</h2>
     <div class="apartments-page-content">
       <div class="apartments-list-wrapper">
-        <ul class="apartments-list" v-if="apartments.length">
+        <ul class="apartments-list">
           <li class="apartments-list__header">
             <div class="apartments-list__text apartments-list-column" v-if="!isLaptop">Планировка</div>
             <div class="apartments-list__text apartments-list-column" v-if="!isLaptop">Квартира</div>
