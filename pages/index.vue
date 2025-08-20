@@ -29,6 +29,10 @@ const totalCount = ref<number>(0);
 const sort = ref<Sort|null>();
 
 const canFetchMore = computed(() => allApartments.value.length < totalCount.value);
+const existingNumberOfRooms = computed(
+  () => [...allApartments.value
+    .reduce((acc: Set<number>, apartment: Apartment) => acc.add(apartment.numberOfRooms) , new Set())]
+);
 const isLaptop = useMediaQuery('(max-width: 960px)');
 
 onMounted(async () => {
@@ -248,7 +252,7 @@ const handleFilterApply = (filter: Filter) => {
           Загрузить еще
         </button>
       </div>
-      <apartments-filter></apartments-filter>
+      <apartments-filter :existing-number-of-rooms="existingNumberOfRooms"></apartments-filter>
     </div>
   </div>
 </template>

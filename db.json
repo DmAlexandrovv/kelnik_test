@@ -1,15 +1,6 @@
 {
   "apartments": [
     {
-      "id": "68a4da8ee3faac964c98ba2b",
-      "numberOfRooms": 3,
-      "number": 11,
-      "area": 44.3,
-      "floor": 15,
-      "cost": 10177973,
-      "maxFloor": 17
-    },
-    {
       "id": "68a4da8e3e9698c098b51777",
       "numberOfRooms": 2,
       "number": 18,
@@ -52,15 +43,6 @@
       "area": 87.7,
       "floor": 16,
       "cost": 6004813,
-      "maxFloor": 17
-    },
-    {
-      "id": "68a4da8e89d95c9f7978e066",
-      "numberOfRooms": 3,
-      "number": 126,
-      "area": 81.5,
-      "floor": 4,
-      "cost": 13662361,
       "maxFloor": 17
     },
     {
@@ -163,15 +145,6 @@
       "maxFloor": 17
     },
     {
-      "id": "68a4da8ee40f4877f52d3bb9",
-      "numberOfRooms": 3,
-      "number": 46,
-      "area": 84.1,
-      "floor": 16,
-      "cost": 16817371,
-      "maxFloor": 17
-    },
-    {
       "id": "68a4da8e40bbc44e54a37cf7",
       "numberOfRooms": 2,
       "number": 116,
@@ -205,6 +178,33 @@
       "area": 91.8,
       "floor": 17,
       "cost": 11350048,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ee40f4877f52d3bb9",
+      "numberOfRooms": 3,
+      "number": 46,
+      "area": 84.1,
+      "floor": 16,
+      "cost": 16817371,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8e89d95c9f7978e066",
+      "numberOfRooms": 3,
+      "number": 126,
+      "area": 81.5,
+      "floor": 4,
+      "cost": 13662361,
+      "maxFloor": 17
+    },
+    {
+      "id": "68a4da8ee3faac964c98ba2b",
+      "numberOfRooms": 3,
+      "number": 11,
+      "area": 44.3,
+      "floor": 15,
+      "cost": 10177973,
       "maxFloor": 17
     },
     {

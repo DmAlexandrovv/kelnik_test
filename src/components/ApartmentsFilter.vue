@@ -14,6 +14,12 @@ const costSliderValue = computed(() => filtersStore.cost);
 const areaSliderValue = computed(() => filtersStore.area);
 
 const { setNumberOfRooms, setArea, setCost, reset } = filtersStore;
+const { existingNumberOfRooms } = defineProps({
+  existingNumberOfRooms: {
+    type: Array as PropType<number[]>,
+    default: () => [],
+  },
+});
 
 </script>
 
@@ -23,11 +29,11 @@ const { setNumberOfRooms, setArea, setCost, reset } = filtersStore;
       <button
         v-for="num in MAX_NUMBER_OF_ROOMS"
         :key="num"
-        :disabled="num === 4"
+        :disabled="!existingNumberOfRooms.includes(num)"
         :class="{ 'number-of-rooms-filter__btn': true, 'number-of-rooms-filter__btn--active': num === numberOfRooms }"
         @click="setNumberOfRooms(num)"
       >
-        <span :class="{ 'o-20': num === 4 }">{{ num }}к</span>
+        <span :class="{ 'o-20': !existingNumberOfRooms.includes(num) }">{{ num }}к</span>
       </button>
     </div>
     <div class="cost-filter mt4">
