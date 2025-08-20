@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import type { PropType } from 'vue';
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import VueSlider from 'vue-3-slider-component';
 
