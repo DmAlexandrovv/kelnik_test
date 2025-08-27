@@ -38,12 +38,22 @@ const existingNumberOfRooms = computed(
 const isLaptop = useMediaQuery('(max-width: 960px)');
 
 onMounted(async () => {
-  const data = await fetch(`http://localhost:3001/apartments?_page=1&_per_page=${offset.value}`)
-    .then(res => res.json());
+  const data = await fetch(`/db.json`)
+    .then(res => res.json())
+    .then(db => {
+      const page = 1
+      const perPage = offset.value
+      const start = (page - 1) * perPage
+      const end = start + perPage
+      return {
+        data: db.apartments.slice(start, end),
+        total: db.apartments.length
+      }
+    });
 
   apartments.value = data.data;
   allApartments.value = data.data;
-  totalCount.value = data.items;
+  totalCount.value = data.total;
 });
 
 const debouncedHandleFilterApply = useDebounceFn((filter: Filter) => {
@@ -64,8 +74,18 @@ watch(
 const loadMore = async () => {
   offset.value = offset.value + LOAD_STEP;
 
-  const { data } = await fetch(`http://localhost:3001/apartments?_page=${Math.floor(offset.value / LOAD_STEP)}&_per_page=${LOAD_STEP}`)
-    .then(res => res.json());
+  const { data } = await fetch(`/db.json`)
+    .then(res => res.json())
+    .then(db => {
+      const page = Math.floor(offset.value / LOAD_STEP)
+      const perPage = LOAD_STEP
+      const start = (page - 1) * perPage
+      const end = start + perPage
+      return {
+        data: db.apartments.slice(start, end),
+        total: db.apartments.length
+      }
+    })
 
   allApartments.value = [...allApartments.value, ...data];
 
