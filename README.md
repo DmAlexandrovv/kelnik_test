@@ -20,33 +20,32 @@ npm install
 Build the application for production:
 
 ```bash
-npm run build
+npm run generate
 ```
 
 Locally preview production build:
 
 ```bash
-npm run json-server
 npm run preview
 ```
 
-### Note: Do not close DB connection, run this commands in 2 terminals and keep
-
 Open `http://localhost:3000` and use the app
+
+## Production deploy
+
+### Note: For deploy need authentication in netlify for this app. Roots - Dmitry Alexandrov
+
+```bash
+npm run deploy
+```
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
-
-Start the DB server on `http://localhost:3001`:
-
-### Note: Do not close DB connection, run this commands in 2 terminals and keep
-
 ```bash
 # Run DB
-npm run json-server
-# Run UI
 npm run dev
 ```
+
+Open `http://localhost:3000` and use the app
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
