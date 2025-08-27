@@ -26,61 +26,63 @@ const { existingNumberOfRooms } = defineProps({
 </script>
 
 <template>
-  <div class="apartments-filter">
-    <div class="number-of-rooms-filter">
-      <button
-        v-for="num in MAX_NUMBER_OF_ROOMS"
-        :key="num"
-        :disabled="!existingNumberOfRooms.includes(num)"
-        :class="{ 'number-of-rooms-filter__btn': true, 'number-of-rooms-filter__btn--active': num === numberOfRooms }"
-        @click="setNumberOfRooms(num)"
-      >
-        <span :class="{ 'o-20': !existingNumberOfRooms.includes(num) }">{{ num }}к</span>
+  <client-only>
+    <div class="apartments-filter">
+      <div class="number-of-rooms-filter">
+        <button
+          v-for="num in MAX_NUMBER_OF_ROOMS"
+          :key="num"
+          :disabled="!existingNumberOfRooms.includes(num)"
+          :class="{ 'number-of-rooms-filter__btn': true, 'number-of-rooms-filter__btn--active': num === numberOfRooms }"
+          @click="setNumberOfRooms(num)"
+        >
+          <span :class="{ 'o-20': !existingNumberOfRooms.includes(num) }">{{ num }}к</span>
+        </button>
+      </div>
+      <div class="cost-filter mt4">
+        <span class="apartments-filter__text">Стоимость квартиры, ₽</span>
+        <div class="flex justify-between mt3 mb2">
+          <span class="apartments-filter__label">
+            <span class="o-50">от</span> <span class="fw6">{{ costSliderValue[0] }}</span>
+          </span>
+          <span class="apartments-filter__label">
+            <span class="o-50">до</span> <span class="fw6">{{ costSliderValue[1] }}</span>
+          </span>
+        </div>
+        <VueSlider
+          :model-value="costSliderValue"
+          :min="DEFAULT_COST_FILTER_RANGE[0]"
+          :max="DEFAULT_COST_FILTER_RANGE[1]"
+          tooltip="none"
+          @update:model-value="setCost"
+        />
+      </div>
+      <div class="cost-filter mt4">
+        <span class="apartments-filter__text">Площадь, м²</span>
+        <div class="flex justify-between mt3 mb2">
+          <span class="apartments-filter__label">
+            <span class="o-50">от</span> <span class="fw6">{{ areaSliderValue[0] }}</span>
+          </span>
+          <span class="apartments-filter__label">
+            <span class="o-50">до</span> <span class="fw6">{{ areaSliderValue[1] }}</span>
+          </span>
+        </div>
+        <VueSlider
+          :model-value="areaSliderValue"
+          :min="DEFAULT_AREA_FILTER_RANGE[0]"
+          :max="DEFAULT_AREA_FILTER_RANGE[1]"
+          tooltip="none"
+          @update:model-value="setArea"
+        />
+      </div>
+      <button class="apartments-filter__reset-btn" @click="reset">
+        Сбросить параметры
+        <FontAwesomeIcon
+          icon="close"
+        />
       </button>
     </div>
-    <div class="cost-filter mt4">
-      <span class="apartments-filter__text">Стоимость квартиры, ₽</span>
-      <div class="flex justify-between mt3 mb2">
-        <span class="apartments-filter__label">
-          <span class="o-50">от</span> <span class="fw6">{{ costSliderValue[0] }}</span>
-        </span>
-        <span class="apartments-filter__label">
-          <span class="o-50">до</span> <span class="fw6">{{ costSliderValue[1] }}</span>
-        </span>
-      </div>
-      <VueSlider
-        :model-value="costSliderValue"
-        :min="DEFAULT_COST_FILTER_RANGE[0]"
-        :max="DEFAULT_COST_FILTER_RANGE[1]"
-        tooltip="none"
-        @update:model-value="setCost"
-      />
-    </div>
-    <div class="cost-filter mt4">
-      <span class="apartments-filter__text">Площадь, м²</span>
-      <div class="flex justify-between mt3 mb2">
-        <span class="apartments-filter__label">
-          <span class="o-50">от</span> <span class="fw6">{{ areaSliderValue[0] }}</span>
-        </span>
-        <span class="apartments-filter__label">
-          <span class="o-50">до</span> <span class="fw6">{{ areaSliderValue[1] }}</span>
-        </span>
-      </div>
-      <VueSlider
-        :model-value="areaSliderValue"
-        :min="DEFAULT_AREA_FILTER_RANGE[0]"
-        :max="DEFAULT_AREA_FILTER_RANGE[1]"
-        tooltip="none"
-        @update:model-value="setArea"
-      />
-    </div>
-    <button class="apartments-filter__reset-btn" @click="reset">
-      Сбросить параметры
-      <FontAwesomeIcon
-        icon="close"
-      />
-    </button>
-  </div>
+  </client-only>
 </template>
 
 <style scoped lang="scss">

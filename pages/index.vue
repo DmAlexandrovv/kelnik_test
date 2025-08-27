@@ -51,7 +51,6 @@ onMounted(async () => {
       }
     });
 
-  apartments.value = data.data;
   allApartments.value = data.data;
   totalCount.value = data.total;
 });
