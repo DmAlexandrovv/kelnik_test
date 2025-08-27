@@ -29,6 +29,7 @@ const apartments = ref<Apartment[]>([]);
 const offset = ref<number>(LOAD_STEP);
 const totalCount = ref<number>(0);
 const sort = ref<Sort|null>();
+const isLoading = ref<boolean>(false);
 
 const canFetchMore = computed(() => allApartments.value.length < totalCount.value);
 const existingNumberOfRooms = computed(
@@ -57,11 +58,15 @@ onMounted(async () => {
 
 const debouncedHandleFilterApply = useDebounceFn((filter: Filter) => {
   handleFilterApply(filter);
+
+  isLoading.value = false;
 }, 500);
 
 watch(
   () => filter.value,
   (filter) => {
+    isLoading.value = true;
+
     debouncedHandleFilterApply(filter);
   },
   {
@@ -257,13 +262,18 @@ const handleFilterApply = (filter: Filter) => {
               </div>
             </div>
           </li>
-          <ApartmentRow
-            v-for="apartment in apartments"
-            :key="apartment.id"
-            :apartment="apartment"
-            class="apartments-list__apartment"
-          >
-          </ApartmentRow>
+          <li v-if="isLoading" class="ml-auto mr-auto mt4">
+            <span class="apartments-list__loader"></span>
+          </li>
+          <template v-else>
+            <ApartmentRow
+                v-for="apartment in apartments"
+                :key="apartment.id"
+                :apartment="apartment"
+                class="apartments-list__apartment"
+            >
+            </ApartmentRow>
+          </template>
         </ul>
         <button
           v-if="canFetchMore"
@@ -279,6 +289,15 @@ const handleFilterApply = (filter: Filter) => {
 </template>
 
 <style lang="scss" scoped>
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .apartments-page {
   max-width: 1440px;
   margin: 0 auto;
@@ -302,6 +321,17 @@ const handleFilterApply = (filter: Filter) => {
     display: grid;
 
     list-style-type: none;
+
+    &__loader {
+      width: 48px;
+      height: 48px;
+      border: 5px solid $green-active;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
 
     &__apartment,
     &__header {
