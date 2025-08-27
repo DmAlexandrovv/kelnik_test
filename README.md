@@ -39,6 +39,8 @@ Open `http://localhost:3000` and use the app
 npm run deploy
 ```
 
+Open https://helpful-nasturtium-11a55a.netlify.app/
+
 ## Development Server
 
 ```bash
